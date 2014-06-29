@@ -1,0 +1,21 @@
+@CHARSET "UTF-8";
+
+.panel_layer {
+	margin: 0;
+	padding: 0;
+	width: 500px;
+}
+
+.panel_heading {
+	margin: 1px;
+	color: #fff;
+	padding: 3px 10px;
+	cursor: pointer;
+	position: relative;
+	background-color: #c30;
+}
+
+.panel_content {
+	padding: 5px 10px;
+	background-color: #fafafa;
+}
