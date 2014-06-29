@@ -1,6 +1,5 @@
 package com.leo.han.services;
 
-import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,19 +23,17 @@ public class CacheService {
 	@Cacheable(value = "sampleCache", key = "#root.methodName.concat('---').concat(#locale)")
 	public Map<String, String> getItems(String locale) {
 
-		System.out.println("getItems--"+locale);
-		
+		System.out.println("getItems--" + locale);
+
 		return cacheDao.getItems(locale);
 
 	}
-	
-	
-	
+
 	@Cacheable(value = "sampleCache", key = "#root.methodName.concat('---').concat(#locale)")
 	public Map<String, String> getPersons(String locale) {
 
-		System.out.println("getPersons--"+locale);
-		
+		System.out.println("getPersons--" + locale);
+
 		return cacheDao.getPersons(locale);
 
 	}
