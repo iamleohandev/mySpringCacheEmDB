@@ -17,3 +17,5 @@
 <c:url value="/" var="home_url" />
 
 <c:url value="/control" var="control_url" />
+
+<c:url value="/controlresult" var="controlresult_url" />

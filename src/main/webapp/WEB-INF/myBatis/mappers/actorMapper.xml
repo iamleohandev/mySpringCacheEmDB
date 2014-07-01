@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.leo.han.dao.ActorDao">
+
+	<resultMap type="Actor" id="result_actor">
+		<result column="actor_id" property="actor_id" />
+		<result column="first_name" property="first_name" />
+		<result column="last_name" property="last_name" />
+	</resultMap>
+
+
+
+	<select id="getActors" resultMap="result_actor">
+		select * from actor;
+	</select>
+
+
+	<select id="getActorById" parameterType="int" resultType="Actor">
+		select * from actor where actor_id = #{id};
+	</select>
+</mapper>

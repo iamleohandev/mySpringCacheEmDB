@@ -21,6 +21,11 @@
 		<put-attribute name="title" value="title.control" />
 		<put-attribute name="body" value="/WEB-INF/jsps/control.jsp" />
 	</definition>
-	
-	
+
+
+	<definition name="controlresult" extends="baseLayout">
+		<put-attribute name="title" value="title.control" />
+		<put-attribute name="body" value="/WEB-INF/jsps/controlresult.jsp" />
+	</definition>
+
 </tiles-definitions>

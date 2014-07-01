@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.leo.han.dao.DropdownItemDao">
+
+
+	<resultMap type="DropdownItem" id="result_items">
+		<result column="id" property="id" />
+		<result column="english_desc" property="english_desc" />
+		<result column="french_desc" property="french_desc" />
+	</resultMap>
+
+
+
+	<select id="getList1Items" resultMap="result_items">
+		select * from list1;
+	</select>
+
+	<select id="getList2Items" resultMap="result_items">
+		select * from list2;
+	</select>
+
+	<select id="getList3Items" resultMap="result_items">
+		select * from list3;
+	</select>
+
+	<select id="getList4Items" resultMap="result_items">
+		select * from list4;
+	</select>
+
+
+</mapper>

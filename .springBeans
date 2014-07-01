@@ -9,6 +9,8 @@
 	<configs>
 		<config>src/main/webapp/WEB-INF/config/springmvc-config.xml</config>
 		<config>src/main/webapp/WEB-INF/config/applicationContext-config.xml</config>
+		<config>src/main/webapp/WEB-INF/config/cache-config.xml</config>
+		<config>src/main/webapp/WEB-INF/config/persistence-config.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>

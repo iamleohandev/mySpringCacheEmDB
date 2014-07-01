@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xsi:schemaLocation="http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-3.2.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+
+	<!-- Create a embedded dataSource by using the jdbc namespace can be use 
+		for testing and dev -->
+
+	<jdbc:embedded-database type="HSQL" id="dataSource">
+		<jdbc:script location="classpath:embeddedsql/schema.sql" />
+		<jdbc:script location="classpath:embeddedsql/test-data.sql" />
+	</jdbc:embedded-database>
+
+	<!-- Step1: Setup the sqlSessionFactory object -->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"></property>
+		<property name="configLocation" value="WEB-INF/myBatis/myBatis-config.xml">
+		</property>
+		<property name="mapperLocations" value="WEB-INF/myBatis/mappers/*.xml">
+		</property>
+	</bean>
+
+	<!--Step2: use MapperScannerConfiguer to scan the dao interface in the basePackage -->
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="com.leo.han.dao"></property>
+		
+	</bean>
+</beans>
