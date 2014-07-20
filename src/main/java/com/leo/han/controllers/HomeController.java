@@ -23,7 +23,7 @@ public class HomeController {
 	private ListItemService listItemService;
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String goHome() {
+	public String goHome(HttpSession session, Locale locale) {
 
 		return "home";
 	}
